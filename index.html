@@ -1,57 +1,305 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой сайт</title>
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avion — Furniture & Homeware</title>
 </head>
-
 <body>
-    <header>
-        <div>
-            <h1>МойСайт</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="home">
-            <h2>Добро пожаловать!</h2>
-            <p>Это главная страница нашего веб-приложения.</p>
-        </section>
+  <!-- HEADER -->
+  <header>
+    <nav aria-label="Top navigation">
 
-        <section id="about">
-            <h2>О нас</h2>
-            <p>Мы компания, которая занимается созданием качественных веб-решений.</p>
-        </section>
+      <form action="#" method="get">
+        <label for="search">Search</label>
+        <input id="search" name="q" type="search" placeholder="Search products" />
+        <button type="submit">
+          <img src="assets/icons/Search.png" alt="Search" />
+        </button>
+      </form>
 
-        <section id="services">
-            <h2>Наши услуги</h2>
-            <ul>
-                <li>Веб-разработка</li>
-                <li>Дизайн</li>
-                <li>Консультации</li>
-            </ul>
-        </section>
+      <h1>Avion</h1>
 
-        <section id="contact">
-            <h2>Контакты</h2>
-            <p>Email: info@example.com</p>
-            <p>Телефон: +7 (123) 456-78-90</p>
-        </section>
-    </main>
+      <ul>
+        <li>
+          <a href="#cart" aria-label="Cart">
+            <img src="assets/icons/Shopping--cart.png" alt="Cart" />
+          </a>
+        </li>
+        <li>
+          <a href="#account" aria-label="Account">
+            <img src="assets/icons/User--avatar.png" alt="Account" />
+          </a>
+        </li>
+      </ul>
 
-    <footer>
-        <p>&copy; 2025 Сайт. Все права защищены.</p>
-    </footer>
+      <ul aria-label="Main menu">
+        <li><a href="#plant-pots">Plant pots</a></li>
+        <li><a href="#ceramics">Ceramics</a></li>
+        <li><a href="#tables">Tables</a></li>
+        <li><a href="#chairs">Chairs</a></li>
+        <li><a href="#crockery">Crockery</a></li>
+        <li><a href="#tableware">Tableware</a></li>
+        <li><a href="#cutlery">Cutlery</a></li>
+      </ul>
+
+    </nav>
+    <hr />
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section aria-label="Hero">
+      <div>
+        <h2>The furniture brand for the future, with timeless designs</h2>
+        <p>
+          A new era in home living. Avion is a modern brand with clean fonts, subtle colors and a
+          beautiful way to display things digitally using modern web technologies.
+        </p>
+        <p><a href="#new-ceramics">View collection</a></p>
+      </div>
+
+      <figure>
+        <img src="assets/img/Right%20Image.png" alt="Black chair on a teal background" />
+        <figcaption>Featured product</figcaption>
+      </figure>
+
+      <hr />
+    </section>
+
+    <!-- BRAND DIFFERENCES -->
+    <section aria-label="Brand differences">
+      <h2>What makes our brand different</h2>
+
+      <ul>
+        <li>
+          <img src="assets/icons/Delivery.png" alt="" />
+          <h3>Next day as standard</h3>
+          <p>Order before 3pm and get your order the next day as standard.</p>
+        </li>
+
+        <li>
+          <img src="assets/icons/Checkmark--outline.png" alt="" />
+          <h3>Made by true artisans</h3>
+          <p>Handmade crafted goods made with real passion and craftsmanship.</p>
+        </li>
+
+        <li>
+          <img src="assets/icons/Purchase.png" alt="" />
+          <h3>Unbeatable prices</h3>
+          <p>For our materials and quality you won’t find better prices anywhere.</p>
+        </li>
+
+        <li>
+          <img src="assets/icons/Sprout.png" alt="" />
+          <h3>Recycled packaging</h3>
+          <p>We use 100% recycled packaging to ensure our footprint is manageable.</p>
+        </li>
+      </ul>
+
+      <hr />
+    </section>
+
+    <!-- NEW CERAMICS -->
+    <section id="new-ceramics" aria-label="New ceramics">
+      <h2>New ceramics</h2>
+
+      <ul>
+        <li>
+          <figure>
+            <img src="assets/img/Photo.png" alt="The Dandy chair" />
+            <figcaption>
+              <p>The Dandy chair</p>
+              <p>£250</p>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/Photo%20%281%29.png" alt="Rustic Vase Set" />
+            <figcaption>
+              <p>Rustic Vase Set</p>
+              <p>£155</p>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/Photo%20%281%29.png" alt="The Silky Vase" />
+            <figcaption>
+              <p>The Silky Vase</p>
+              <p>£125</p>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/Photo%20%282%29.png" alt="The Lucy Lamp" />
+            <figcaption>
+              <p>The Lucy Lamp</p>
+              <p>£399</p>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+
+      <p><a href="#collections">View collection</a></p>
+      <hr />
+    </section>
+
+    <!-- POPULAR PRODUCTS -->
+    <section aria-label="Our popular products">
+      <h2>Our popular products</h2>
+
+      <ul>
+        <li>
+          <figure>
+            <img src="assets/img/Large.png" alt="The Popular suede sofa" />
+            <figcaption>
+              <p>The Popular suede sofa</p>
+              <p>£980</p>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/Right%20Image.png" alt="The Dandy chair" />
+            <figcaption>
+              <p>The Dandy chair</p>
+              <p>£250</p>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <img src="assets/img/Photo%20%283%29.png" alt="The Dandy chair in a studio shot" />
+            <figcaption>
+              <p>The Dandy chair</p>
+              <p>£250</p>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+
+      <p><a href="#collections">View collection</a></p>
+      <hr />
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section aria-label="Newsletter signup">
+      <h2>Join the club and get the benefits</h2>
+      <p>
+        Sign up for our newsletter and receive exclusive offers on new ranges, sales, pop up stores and more
+      </p>
+
+      <form action="#" method="post">
+        <label for="email">Your email</label>
+        <input id="email" name="email" type="email" placeholder="you@email.com" required />
+        <button type="submit">Sign up</button>
+      </form>
+
+      <hr />
+    </section>
+
+    <!-- ABOUT -->
+    <section aria-label="About Avion">
+      <div>
+        <h2>From a studio in London to a global brand with over 400 outlets</h2>
+
+        <p>
+          When we started Avion, the idea was simple. Make high quality furniture affordable and
+          available for the mass market.
+        </p>
+        <p>
+          Handmade, and lovingly crafted furniture and homeware is what we do. We make sure our
+          pieces are easy to love and work beautifully in your home.
+        </p>
+
+        <p><a href="#contact">Get in touch</a></p>
+      </div>
+
+      <figure>
+        <img src="assets/img/Image.png" alt="Living room scene with plants and sofa" />
+        <figcaption>Our story</figcaption>
+      </figure>
+
+      <hr />
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <section aria-label="Footer links">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="#new-arrivals">New arrivals</a></li>
+        <li><a href="#best-sellers">Best sellers</a></li>
+        <li><a href="#recently-viewed">Recently viewed</a></li>
+        <li><a href="#popular-this-week">Popular this week</a></li>
+        <li><a href="#all-products">All products</a></li>
+      </ul>
+
+      <h2>Categories</h2>
+      <ul>
+        <li><a href="#crockery">Crockery</a></li>
+        <li><a href="#furniture">Furniture</a></li>
+        <li><a href="#homeware">Homeware</a></li>
+        <li><a href="#plant-pots">Plant pots</a></li>
+        <li><a href="#chairs">Chairs</a></li>
+        <li><a href="#crockery">Crockery</a></li>
+      </ul>
+
+      <h2>Our company</h2>
+      <ul>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#vacancies">Vacancies</a></li>
+        <li><a href="#contact">Contact us</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#returns">Returns policy</a></li>
+      </ul>
+    </section>
+
+    <section aria-label="Mailing list">
+      <h2>Join our mailing list</h2>
+      <form action="#" method="post">
+        <label for="footer-email">Email address</label>
+        <input id="footer-email" name="email" type="email" placeholder="you@email.com" required />
+        <button type="submit">Sign up</button>
+      </form>
+    </section>
+
+    <section aria-label="Social links">
+      <h2>Follow us</h2>
+      <ul>
+        <li>
+          <a href="#linkedin" aria-label="LinkedIn">
+            <img src="assets/icons/Logo--linkedin.png" alt="LinkedIn" />
+          </a>
+        </li>
+        <li>
+          <a href="#pinterest" aria-label="Pinterest">
+            <img src="assets/icons/Logo--pinterest.png" alt="Pinterest" />
+          </a>
+        </li>
+        <li>
+          <a href="#skype" aria-label="Skype">
+            <img src="assets/icons/Logo--skype.png" alt="Skype" />
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <p>Copyright 2022 Avion LTD</p>
+  </footer>
+
 </body>
-
 </html>

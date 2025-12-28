@@ -55,7 +55,119 @@ input, textarea, select {
   border: 0;
 }
 
-/* ===== ОСНОВНЫЕ СТИЛИ ===== */
+/* ===== Шаг 2: Flexbox для горизонтального меню ===== */
+.header__menu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+  width: 100%;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.main-menu__link {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: #555;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.main-menu__link:hover {
+  background-color: #f0f0f0;
+  color: #255330;
+}
+
+/* ===== Шаг 3: Grid-сетка для контентных блоков ===== */
+.features__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Шаг 4: Masonry-раскладка (по желанию) ===== */
+/* Создаем секцию Masonry Grid */
+.masonry-section {
+  margin: 3rem 0;
+  padding: 2rem 0;
+}
+
+.masonry-section__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #2c5530;
+}
+
+.masonry-grid__container {
+  column-count: 3;
+  column-gap: 24px;
+  margin-top: 2rem;
+}
+
+.masonry-item {
+  display: inline-block;
+  margin: 0 0 1em;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  transition: transform 0.3s ease;
+  break-inside: avoid;
+}
+
+.masonry-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.masonry-item__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #2c5530;
+}
+
+.masonry-item__text {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Разные высоты элементов */
+.masonry-item--short {
+  height: 150px;
+}
+
+.masonry-item--tall {
+  height: 300px;
+}
+
+.masonry-item--very-tall {
+  height: 400px;
+}
+
+/* ===== Шаг 5: Адаптивность (Desktop First) ===== */
+/* Базовые стили (Desktop) */
 .page {
   max-width: 1440px;
   margin: 0 auto;
@@ -69,6 +181,170 @@ input, textarea, select {
   text-align: center;
 }
 
+/* Ноутбуки (меньше 1200px) */
+@media (max-width: 1199px) {
+  .hero__title {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .masonry-grid__container {
+    column-count: 2;
+  }
+}
+
+/* Планшеты (меньше 992px) */
+@media (max-width: 991px) {
+  .header__nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .header__search {
+    max-width: 100%;
+  }
+  
+  .hero__title {
+    font-size: 1.9rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .features__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .products__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .masonry-grid__container {
+    column-count: 2;
+  }
+  
+  .product-card--large {
+    grid-column: span 2;
+  }
+}
+
+/* Мобильные в альбомной ориентации (меньше 768px) */
+@media (max-width: 767px) {
+  /* Меню становится вертикальным */
+  .header__menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .hero {
+    flex-direction: column;
+  }
+  
+  .hero__title {
+    font-size: 1.7rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .features__list {
+    grid-template-columns: 1fr;
+  }
+  
+  .products__list {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-card--large {
+    grid-column: span 1;
+  }
+  
+  .masonry-grid__container {
+    column-count: 1;
+  }
+  
+  .about {
+    flex-direction: column;
+  }
+  
+  .newsletter__form,
+  .footer__form {
+    flex-direction: column;
+  }
+  
+  .newsletter__input,
+  .footer__input {
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+  
+  .newsletter__button,
+  .footer__button {
+    border-radius: 6px;
+  }
+  
+  .footer__links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Мобильные (меньше 576px) */
+@media (max-width: 575px) {
+  .hero__title {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .newsletter__title,
+  .about__title {
+    font-size: 1.6rem;
+  }
+  
+  .footer__links {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer__social-list {
+    flex-wrap: wrap;
+  }
+}
+
+/* Очень маленькие экраны (меньше 400px) */
+@media (max-width: 399px) {
+  .page {
+    padding: 0 10px;
+  }
+  
+  .hero__title {
+    font-size: 1.3rem;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+  }
+  
+  .newsletter__title,
+  .about__title {
+    font-size: 1.4rem;
+  }
+  
+  .button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== ОСНОВНЫЕ СТИЛИ ===== */
 .section-divider {
   border: none;
   border-top: 1px solid #eaeaea;
@@ -146,45 +422,6 @@ input, textarea, select {
   height: 20px;
 }
 
-.header__menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  width: 100%;
-  margin-top: 1rem;
-  padding: 1rem 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
-
-.main-menu__link {
-  padding: 0.5rem 0;
-  font-weight: 500;
-  color: #555;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.main-menu__link:hover {
-  color: #2c5530;
-}
-
-.main-menu__link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #2c5530;
-  transition: width 0.3s ease;
-}
-
-.main-menu__link:hover::after {
-  width: 100%;
-}
-
 .header__divider {
   border: none;
   border-top: 2px solid #2c5530;
@@ -203,13 +440,6 @@ input, textarea, select {
 .hero__content {
   flex: 1;
   min-width: 300px;
-}
-
-.hero__title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #1a1a1a;
 }
 
 .hero__text {
@@ -238,25 +468,6 @@ input, textarea, select {
 /* ===== FEATURES ===== */
 .features {
   margin: 3rem 0;
-}
-
-.features__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.feature-card {
-  text-align: center;
-  padding: 2rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .feature-card__icon {
@@ -301,10 +512,6 @@ input, textarea, select {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.product-card--large {
-  grid-column: span 2;
-}
-
 .product-card__image {
   width: 100%;
   height: 200px;
@@ -338,13 +545,6 @@ input, textarea, select {
   background-color: #f8f9fa;
   border-radius: 12px;
   margin: 3rem 0;
-}
-
-.newsletter__title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #1a1a1a;
 }
 
 .newsletter__text {
@@ -382,13 +582,6 @@ input, textarea, select {
 .about__content {
   flex: 1;
   min-width: 300px;
-}
-
-.about__title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #1a1a1a;
 }
 
 .about__text {
@@ -556,53 +749,4 @@ input, textarea, select {
   font-size: 0.875rem;
   padding-top: 2rem;
   border-top: 1px solid #eaeaea;
-}
-
-/* ===== АНИМАЦИИ ===== */
-.fade-in {
-  animation: fadeIn 0.5s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== АДАПТИВНОСТЬ ===== */
-@media (max-width: 768px) {
-  .header__nav {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .header__search {
-    max-width: 100%;
-  }
-  
-  .hero, .about {
-    flex-direction: column;
-  }
-  
-  .product-card--large {
-    grid-column: span 1;
-  }
-  
-  .newsletter__form, .footer__form {
-    flex-direction: column;
-  }
-  
-  .newsletter__input, .footer__input {
-    border-radius: 6px;
-    margin-bottom: 1rem;
-  }
-  
-  .newsletter__button, .footer__button {
-    border-radius: 6px;
-  }
 }
